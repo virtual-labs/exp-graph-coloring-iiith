@@ -1,13 +1,78 @@
-<!DOCTYPE html>
+<!DOCTYPE >
 <html>
-<head>
-	<!-- Add CSS at the head of HTML file -->
-    <link rel="stylesheet" href="./css/main.css">
-</head>
-<body>
-		<!-- Your code goes here-->
 
-	<!-- Add JS at the bottom of HTML file --> 
-        <script src="./js/main.js"></script>
+<head>
+<title>Discrete Mathematics Vlabs Experiments</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/virtual-labs/virtual-style@0.0.8-b/css/style.min.css">
+<link href="./css/main.css" rel="stylesheet" />
+
+    <meta charset=utf-8 />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, minimal-ui">
+</head>
+
+
+<body>
+
+    <h1>Find the edges in Hasse diagram.</h1>
+    <p>
+        Given bellow is a partial order. Read the instructions given below click the edges that belong to the Hasse Diagram
+    </p>
+    <br>
+
+    <button type="button" class="collapsible">Instructions</button>
+    
+    <div class="content">
+
+	<ul>
+		<li>Click the edges that belong to the Hasse Diagram.</li>
+		<li>Correct edges turns GREEN.</li>
+		<li>Wrong edges turns RED</li>
+		<li>Refer to the message dispalayed</li>
+		<li>Click NEXT To get new graph</li>
+	  </ul>
+    </div>
+
+
+    <script>
+    var coll = document.getElementsByClassName("collapsible");
+    var i;
+    
+    for (i = 0; i < coll.length; i++) {
+      coll[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var content = this.nextElementSibling;
+        if (content.style.display === "block") {
+          content.style.display = "none";
+        } else {
+          content.style.display = "block";
+        }
+      });
+    }
+    </script>
+
+	<p><br></p>
+
+    <button class="button"  onClick="Refresh()">NEXT</button>
+    <script>
+        function Refresh() {
+            window.parent.location = window.parent.location.href;
+        }
+    </script>
+
+	<p><br></p>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cytoscape/3.23.0/cytoscape.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dagre/0.8.2/dagre.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/cytoscape-dagre@2.2.2/cytoscape-dagre.min.js"></script>
+
+
+
+    <div id="console"></div>
+
+    <div id="cy"></div>
+    <!-- Load application code at the end to ensure DOM is loaded -->
+    <script src="https://cdn.jsdelivr.net/gh/virtual-labs/virtual-style@0.0.8-b/js/script.js"></script>
+    <script type="module" src="./js/main.js"></script>
 </body>
 </html>
