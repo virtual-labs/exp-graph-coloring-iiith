@@ -2,6 +2,12 @@
 function getRandomInt(max) {
     return Math.floor(Math.random() * max);
 }
+
+function Refresh() {
+    window.parent.location = window.parent.location.href;
+}
+
+
 var relation = {
     nodes: [
         [1, 2, 3, 4, 5,6,7,8,9,10],
@@ -35,7 +41,7 @@ var cy_edges = relation.edges[i].map((x) => {
 var cy = (window.cy = cytoscape({
     container: document.getElementById("cy"),
 
-    boxSelectionEnabled: false,
+    boxSelectionEnabled: true,
     autounselectify: true,
     userZoomingEnabled: false,
     zoomingEnabled: false,
@@ -115,7 +121,7 @@ var cy = (window.cy = cytoscape({
 }));
 
 
-cy.on("click", "node", function (evt) {
+cy.on("tap", "node", function (evt) {
     console.log("clicked " + this.id());
 
     console.log(color_id[(node_color[Number(this.id())]+1)%4])
