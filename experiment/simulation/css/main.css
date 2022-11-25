@@ -26,11 +26,11 @@ text {
 
 #cy {
   position: absolute;
-  width: 45%;
+  width: 50%;
   height: 50%;
   margin: 5px;
   top: 25%;
-  left: 35%;
+  left: 25%;
 
   border: 0.2rem solid black;
 }

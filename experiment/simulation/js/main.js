@@ -37,7 +37,7 @@ var cy_edges = relation.edges[i].map((x) => {
         data: { id: `${x[0]}-${x[1]}`, source: `${x[0]}`, target: `${x[1]}` }
     };
 });
-
+const observ = document.getElementById("observations");
 var cy = (window.cy = cytoscape({
     container: document.getElementById("cy"),
 
@@ -128,20 +128,46 @@ cy.on("tap", "node", function (evt) {
     this.toggleClass(color_id[node_color[Number(this.id())]]);
     this.toggleClass(color_id[(node_color[Number(this.id())]+1)%4]);
     node_color[Number(this.id())] = (node_color[Number(this.id())] + 1) % 4;
+    var g=' ';
+    var r= ' ';
     for (let e of this.connectedEdges()) {
         var y = e.target().id();
+        
         if (y == this.id()) {
             y = e.source().id();
         } 
         if (node_color[Number(y)] == node_color[Number(this.id())]) {
             e.removeClass("green");
             e.addClass("red");
+            console.log(y,this.id());
+            r+= ' '+this.id()+' - '+y+'; ';
+            //s+="</font>" +"<br>"+"nodes of edge "+ e + "are same color so it is ";
+            //s+="nodes of edge "+ e + "are same color so it is "+"<br>";
+            //console.log(e.source().id()+'-'+e);
         } else {
             e.removeClass("red");
             e.addClass("green");
+            console.log(y,this.id());
+            g+= ' '+this.id()+' - '+y+'; ';
+
+            //s+="</font>" +"<br>"+"nodes of edge "+ e + "are same color are of diffrent color ";
+            //s+="nodes of edge "+ e + "are same color are of diffrent color "+"<br>";
+            //console.log(e.source().id()+'-'+e);
+
         }
-        console.log(y);
     }
+    var s=' ';
+    if (r != ' '){
+        s+="Edges "+ r + "changed to Red as nodes connecting them  now (on clicking " +this.id()+ ") are of the same color["+color_id[node_color[Number(this.id())]]+"] <br>"+"<br>"
+    }
+    if (g != ' '){
+        s+="Edges "+ g + "changed to Green as nodes connecting them now (on clicking " +this.id()+ ") are of different color"+"<br>"
+    }
+    
+    observ.innerHTML = s;
+                        
+    
+        
     // console.log(e);
     // if (hasse_edges.includes(this.id())) {
     //     this.addClass("green");
