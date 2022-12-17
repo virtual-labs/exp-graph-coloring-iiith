@@ -1,1 +1,1 @@
-## Experiment name
+## Graph Colouring
