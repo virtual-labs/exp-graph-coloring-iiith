@@ -1,5 +1,5 @@
 ### Aim of the experiment
--To understand definitions of Graph colouring and chromatic number.
+- To understand definitions of Graph colouring and chromatic number.
 
 - To understand how to colour a Graph.
 
