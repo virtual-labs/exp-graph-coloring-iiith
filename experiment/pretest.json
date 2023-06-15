@@ -2,37 +2,37 @@
   "version": 2.0,
   "questions": [
     {
-      "question": "This is a Sample Question 1?",
+      "question": "Which of the following is not a type of graph in computer science?",
       "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
+        "a": "undirected graph",
+        "b": "bar graph",
+        "c": "directed graph",
+        "d": "weighted graph"
       },
       "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
+        "a": "An undirected graph is graph, i.e., a set of objects (called vertices or nodes) that are connected together, where all the edges are bidirectional ",
+        "b": "bar graph is a chart that presents categorical data with rectangular bars",
+        "c": "A directed graph, also called a digraph, is a graph in which the edges have a direction",
+        "d": "A weighted graph is a graph in which each branch is given a numerical weight"
       },
-      "correctAnswer": "a",
+      "correctAnswer": "b",
       "difficulty": "beginner"
     },
     {
-      "question": "This is a Sample Question 2?",
+      "question": "What is vertex coloring of a graph?",
       "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
+        "a": "A condition where any two vertices having a common edge should not have same color",
+        "b": " A condition where any two vertices having a common edge should always have same color",
+        "c": "A condition where all vertices should have a different color",
+        "d": "A condition where all vertices should have same color"
       },
       "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
+        "a": "The condition for vertex coloring of a graph is that two vertices which share a common edge should not have the same color. If it uses k colors in the process then it is called k coloring of graph",
+        "b": " ",
+        "c": " ",
+        "d": " "
       },
-      "correctAnswer": "c",
+      "correctAnswer": "a",
       "difficulty": "beginner"
     }
   ]
