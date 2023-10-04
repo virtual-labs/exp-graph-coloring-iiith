@@ -23,7 +23,7 @@ The steps required to color a graph G with n number of vertices are as follows
 
 In the above figure, at first vertex 1 is colored red. As the adjacent vertices of vertex 1 are again adjacent, vertex 2 and vertex 4 are colored with different color, yellow and blue respectively. Then vertex 3 is colored as red as no adjacent vertex of c is colored red. Hence, we could color the graph by minimum 3 colors. Hence, the chromatic number of the graph is 3.
 
-#### Applications of Graph Colouring:**
+#### Applications of Graph Colouring:
 
 - **1 Scheduling**
     Lets take an example of Exam Scheduling. Let’s suppose algebra, calculus, statistics and geometry are four courses of study in our college. And let’s say that following pairs have common students :
