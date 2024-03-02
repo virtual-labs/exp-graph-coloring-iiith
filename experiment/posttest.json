@@ -38,7 +38,7 @@
     },
     {
       "question": " What will be the chromatic number of the following graph?",
-      "image":"experiment/images/mcqim1.png",
+      "img":"images/mcqim1.png",
       "answers": {
         "a": "2",
         "b": "4",
