@@ -1,0 +1,93 @@
+
+{
+  "version": 2.0,
+  "questions": [
+    {
+      "question": "How many unique colors will be required for proper vertex coloring of a complete graph having n vertices?",
+      "answers": {
+        "a": "0",
+        "b": "1",
+        "c": "n",
+        "d": "n!"
+      },
+      "explanations": {
+        "a": " ",
+        "b": " ",
+        "c": "A complete graph is the one in which each vertex is directly connected with all other vertices with an edge. So the number of unique colors required for proper coloring of the graph will be n.",
+        "d": " "
+      },
+      "correctAnswer": "c",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "Minimum number of colors required for proper edge coloring of a graph is called?",
+      "answers": {
+        "a": "Chromatic color",
+        "b": "Chromatic index",
+        "c": "Edge matching",
+        "d": "Color number"
+      },
+      "explanations": {
+        "a": " ",
+        "b": " The minimum number of colors required for proper edge coloring of graph is called chromatic index. It is also known as edge chromatic number.",
+        "c": " ",
+        "d": " "
+      },
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "The minimum number of colours required to properly vertex-colour a complete graph (K_n) with n vertices is:",
+      "answers": {
+        "a": " n - 1",
+        "b": " n + 1",
+        "c": " log(n)",
+        "d": "The chromatic number of the graph (cannot be determined without specific information about the graph)."
+      },
+      "explanations": {
+        "a": " ",
+        "b": " ",
+        "c": " ",
+        "d": " "
+      },
+      "correctAnswer": "d",
+      "difficulty": "Intermediate"
+    },
+    {
+      "question": "A bipartite graph can always be properly vertex-coloured with",
+      "answers": {
+        "a": "Any number of colours",
+        "b": "The number of colours equal to the degree of any vertex.",
+        "c": "Exactly 2 colours.",
+        "d": "The number of colours equal to the number of vertices in one partition."
+      },
+      "explanations": {
+        "a": "",
+        "b": " ",
+        "c": " ",
+        "d": " "
+      },
+      "correctAnswer": "c",
+      "difficulty": "Intermediate"
+    },
+    {
+      "question": "Which of the following algorithms can be used to find a valid vertex colouring of a graph (it might not be the minimum number of colours)?",
+      "answers": {
+        "a": "Depth-First Search (DFS)",
+        "b": "Breadth-First Search (BFS)",
+        "c": "Minimum Spanning Tree (MST)",
+        "d": "Shortest Path Algorithm (Dijkstra's)"
+      },
+      "explanations": {
+        "a": "Depth-First Search (DFS) ",
+        "b": " ",
+        "c": " ",
+        "d": " "
+      },
+      "correctAnswer": "a",
+      "difficulty": "Hard"
+    }
+    
+
+  ]
+}

@@ -1,0 +1,8 @@
+
+/home/runner/work/exp-graph-coloring-iiith/exp-graph-coloring-iiith/experiment/simulation/js/main.js
+    6:10  warning  'Refresh' is defined but never used  no-unused-vars
+   47:23  warning  'cytoscape' is not defined           no-undef
+  130:32  warning  'evt' is defined but never used      no-unused-vars
+
+✖ 3 problems (0 errors, 3 warnings)
+
