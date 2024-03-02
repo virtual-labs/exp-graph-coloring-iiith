@@ -37,22 +37,57 @@
       "difficulty": "beginner"
     },
     {
-      "question": " What will be the chromatic number of the following graph?",
-      "img":"images/mcqim1.png",
+      "question": "The minimum number of colours required to properly vertex-colour a complete graph (K_n) with n vertices is:",
       "answers": {
-        "a": "2",
-        "b": "4",
-        "c": "1",
-        "d": "3"
+        "a": " n - 1",
+        "b": " n + 1",
+        "c": " log(n)",
+        "d": "The chromatic number of the graph (cannot be determined without specific information about the graph)."
       },
       "explanations": {
-        "a": "Two",
+        "a": " ",
+        "b": " ",
+        "c": " ",
+        "d": " "
+      },
+      "correctAnswer": "d",
+      "difficulty": "Intermediate"
+    },
+    {
+      "question": "A bipartite graph can always be properly vertex-coloured with",
+      "answers": {
+        "a": "Any number of colours",
+        "b": "The number of colours equal to the degree of any vertex.",
+        "c": "Exactly 2 colours.",
+        "d": "The number of colours equal to the number of vertices in one partition."
+      },
+      "explanations": {
+        "a": "",
+        "b": " ",
+        "c": " ",
+        "d": " "
+      },
+      "correctAnswer": "c",
+      "difficulty": "Intermediate"
+    },
+    {
+      "question": "Which of the following algorithms can be used to find a valid vertex colouring of a graph (it might not be the minimum number of colours)?",
+      "answers": {
+        "a": "Depth-First Search (DFS)",
+        "b": "Breadth-First Search (BFS)",
+        "c": "Minimum Spanning Tree (MST)",
+        "d": "Shortest Path Algorithm (Dijkstra's)"
+      },
+      "explanations": {
+        "a": "Depth-First Search (DFS) ",
         "b": " ",
         "c": " ",
         "d": " "
       },
       "correctAnswer": "a",
-      "difficulty": "beginner"
+      "difficulty": "Hard"
     }
+    
+
   ]
 }
