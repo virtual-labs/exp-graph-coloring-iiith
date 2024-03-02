@@ -34,6 +34,57 @@
       },
       "correctAnswer": "a",
       "difficulty": "beginner"
+    },
+    {
+      "question": "In a properly vertex-coloured graph, what can you say about the colours of connected vertices (vertices with an edge between them)?",
+      "answers": {
+        "a": " They must all have the same colour",
+        "b": "They must all have different colours",
+        "c": "They can have any colour",
+        "d": "None of the above"
+      },
+      "explanations": {
+        "a": "",
+        "b": " ",
+        "c": " ",
+        "d": " "
+      },
+      "correctAnswer": "b",
+      "difficulty": "Intermediate"
+    },
+    {
+      "question": "A graph G has a chromatic number of 2. What can you conclude about G?",
+      "answers": {
+        "a": "G is a complete graph.",
+        "b": " G is a bipartite graph.",
+        "c": "G can only be coloured with exactly 2 colours.",
+        "d": "G must have an even number of vertices."
+      },
+      "explanations": {
+        "a": "",
+        "b":  "(Since the chromatic number is 2, it can be properly coloured with just 2 colours, which is a characteristic of bipartite graphs)",
+        "c": " ",
+        "d": " "
+      },
+      "correctAnswer":"b",
+      "difficulty": "Hard"
+    },
+    {
+      "question": "A friend claims they coloured a graph with 10 vertices and only needed 1 colour.  Is this possible?",
+      "answers": {
+        "a": "No, this is not possible for any graph with more than 1 vertex",
+        "b": "Yes, it's always possible to colour any graph with just 1 colour",
+        "c": "It depends on the specific connections in the graph",
+        "d": "Maybe, but it's very unlikely."
+      },
+      "explanations": {
+        "a": "Since vertices can be connected, you'll always need at least 2 colours to avoid colouring connected vertices the same",
+        "b": " ",
+        "c": " ",
+        "d": " "
+      },
+      "correctAnswer": "a",
+      "difficulty": "Intermediate"
     }
   ]
 }
