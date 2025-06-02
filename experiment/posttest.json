@@ -50,7 +50,7 @@
         "d": "Correct! A complete graph Kn requires exactly n colors because every vertex is adjacent to every other vertex, requiring each vertex to have a unique color."
       },
       "correctAnswer": "d",
-      "difficulty": "Intermediate"
+      "difficulty": "intermediate"
     },
     {
       "question": "A bipartite graph can always be properly vertex-coloured with",
@@ -67,7 +67,7 @@
         "d": "Incorrect. The number of vertices in a partition is not related to the chromatic number of a bipartite graph."
       },
       "correctAnswer": "c",
-      "difficulty": "Intermediate"
+      "difficulty": "intermediate"
     },
     {
       "question": "Which of the following algorithms can be used to find a valid vertex colouring of a graph (it might not be the minimum number of colours)?",
