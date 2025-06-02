@@ -50,7 +50,7 @@
         "d": "Incorrect. The statement that connected vertices must have different colors is true, making option b the correct answer."
       },
       "correctAnswer": "b",
-      "difficulty": "Intermediate"
+      "difficulty": "intermediate"
     },
     {
       "question": "A graph G has a chromatic number of 2. What can you conclude about G?",
@@ -84,7 +84,7 @@
         "d": "Incorrect. It's not about probability - it depends entirely on whether the graph has any edges."
       },
       "correctAnswer": "c",
-      "difficulty": "Intermediate"
+      "difficulty": "intermediate"
     },
     {
       "question": "What is the minimum number of colors needed to properly color a cycle graph with 5 vertices (C5)?",
