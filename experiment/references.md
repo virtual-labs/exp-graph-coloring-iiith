@@ -28,7 +28,7 @@
 
 #### Video Lectures
 1. NPTEL Courses:
-   - [Graph Colouring by Dr. Narayanan N, IIT Mx](https:/https://www.youtube.com/watch?v=FZA1976t20I)
+   - [Graph Colouring by Dr. Narayanan N, IIT M](https://www.youtube.com/watch?v=FZA1976t20I)
 
 2. MIT OpenCourseWare:
    - [Mathematics for Computer Science](https://ocw.mit.edu/courses/6-042j-mathematics-for-computer-science-fall-2010/)
