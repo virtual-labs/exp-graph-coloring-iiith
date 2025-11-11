@@ -119,40 +119,6 @@
       },
       "correctAnswer": "d",
       "difficulty": "intermediate"
-    },
-    {
-      "question": "In graph coloring, what is Brooks' theorem?",
-      "answers": {
-        "a": "Every graph can be colored with maximum degree + 1 colors",
-        "b": "For any connected graph G that is not complete or an odd cycle, χ(G) ≤ Δ(G)",
-        "c": "All planar graphs can be colored with 4 colors",
-        "d": "The chromatic number is always equal to the maximum degree"
-      },
-      "explanations": {
-        "a": "Incorrect. While this is often true, Brooks' theorem is more specific about when exactly this bound can be improved.",
-        "b": "Correct! Brooks' theorem states that for any connected graph G that is neither a complete graph nor an odd cycle, the chromatic number χ(G) is at most equal to the maximum degree Δ(G) of the graph.",
-        "c": "Incorrect. This is the Four Color Theorem, not Brooks' theorem.",
-        "d": "Incorrect. The chromatic number can be less than the maximum degree in many cases."
-      },
-      "correctAnswer": "b",
-      "difficulty": "advanced"
-    },
-    {
-      "question": "What is the Mycielski construction and what does it prove about graph coloring?",
-      "answers": {
-        "a": "It creates planar graphs with chromatic number 4",
-        "b": "It generates graphs with high chromatic number and low clique number",
-        "c": "It proves that all graphs are 3-colorable",
-        "d": "It shows that all graphs need at least n colors"
-      },
-      "explanations": {
-        "a": "Incorrect. The Mycielski construction is not specifically related to planar graphs or 4-coloring.",
-        "b": "Correct! The Mycielski construction is a method for creating graphs with arbitrarily high chromatic numbers while keeping the clique number low, disproving the conjecture that graphs with high chromatic numbers must contain large complete subgraphs.",
-        "c": "Incorrect. In fact, it proves the opposite by constructing graphs that need more than 3 colors.",
-        "d": "Incorrect. The construction shows that graphs can need many colors even without containing large complete subgraphs."
-      },
-      "correctAnswer": "b",
-      "difficulty": "advanced"
     }
   ]
 }
