@@ -19,37 +19,37 @@
       "difficulty": "beginner"
     },
     {
-      "question": "Minimum number of colors required for proper edge coloring of a graph is called?",
+      "question": "In the context of the Four Color Theorem mentioned in map coloring, what is the maximum number of colors needed to color any planar map?",
       "answers": {
-        "a": "Chromatic color",
-        "b": "Chromatic index",
-        "c": "Edge matching",
-        "d": "Color number"
+        "a": "2 colors",
+        "b": "3 colors",
+        "c": "4 colors",
+        "d": "5 colors"
       },
       "explanations": {
-        "a": "Incorrect. Chromatic color typically refers to vertex coloring, not edge coloring of a graph.",
-        "b": "Correct! The chromatic index (or edge chromatic number) is the minimum number of colors needed for proper edge coloring where no adjacent edges share the same color.",
-        "c": "Incorrect. Edge matching refers to finding a set of edges without common vertices, not the coloring of edges.",
-        "d": "Incorrect. Color number typically refers to the chromatic number for vertex coloring, not edge coloring."
+        "a": "Incorrect. Two colors are insufficient for many planar maps, especially those with triangular regions.",
+        "b": "Incorrect. Three colors are not always sufficient for all planar maps.",
+        "c": "Correct! The Four Color Theorem states that any planar map can be colored with at most 4 colors such that no two adjacent regions have the same color.",
+        "d": "Incorrect. While 5 colors would work, the Four Color Theorem proves that 4 colors are always sufficient."
       },
-      "correctAnswer": "b",
-      "difficulty": "beginner"
+      "correctAnswer": "c",
+      "difficulty": "intermediate"
     },
     {
-      "question": "The minimum number of colours required to properly vertex-colour a complete graph (K_n) with n vertices is:",
+      "question": "What is the chromatic number of a tree with n vertices (where n > 1)?",
       "answers": {
-        "a": " n - 1",
-        "b": " n + 1",
-        "c": " log(n)",
+        "a": "1",
+        "b": "2",
+        "c": "3",
         "d": "n"
       },
       "explanations": {
-        "a": "Incorrect. A complete graph with n vertices needs at least n colors as every vertex is connected to every other vertex.",
-        "b": "Incorrect. While n+1 colors would work, it's more than the minimum required number of colors.",
-        "c": "Incorrect. log(n) colors would be insufficient as it's less than n for any complete graph with more than 2 vertices.",
-        "d": "Correct! A complete graph Kn requires exactly n colors because every vertex is adjacent to every other vertex, requiring each vertex to have a unique color."
+        "a": "Incorrect. A tree with more than 1 vertex has edges, so it requires at least 2 colors.",
+        "b": "Correct! A tree is a connected acyclic graph and is bipartite, so it can always be colored with exactly 2 colors by alternating colors along any path.",
+        "c": "Incorrect. Two colors are always sufficient for any tree structure.",
+        "d": "Incorrect. While n colors would work, it's excessive - only 2 colors are needed for trees."
       },
-      "correctAnswer": "d",
+      "correctAnswer": "b",
       "difficulty": "intermediate"
     },
     {
@@ -70,21 +70,21 @@
       "difficulty": "intermediate"
     },
     {
-      "question": "Which of the following algorithms can be used to find a valid vertex colouring of a graph (it might not be the minimum number of colours)?",
+      "question": "Which graph coloring application is used when assigning frequencies to mobile towers to avoid interference?",
       "answers": {
-        "a": "Depth-First Search (DFS)",
-        "b": "Breadth-First Search (BFS)",
-        "c": "Minimum Spanning Tree (MST)",
-        "d": "Shortest Path Algorithm (Dijkstra's)"
+        "a": "Map coloring",
+        "b": "Sudoku solving",
+        "c": "Exam scheduling",
+        "d": "Mobile radio frequency assignment"
       },
       "explanations": {
-        "a": "Correct! DFS can be used to color vertices by assigning the first available color that hasn't been used by any adjacent vertex as we traverse the graph.",
-        "b": "Incorrect. While BFS can traverse a graph, it's not typically used for graph coloring as it doesn't provide any specific advantage for color assignment.",
-        "c": "Incorrect. MST algorithms find a spanning tree with minimum weight sum, but don't help with vertex coloring.",
-        "d": "Incorrect. Dijkstra's algorithm finds shortest paths but is not related to graph coloring."
+        "a": "Incorrect. Map coloring is used for geographical regions, not frequency assignment.",
+        "b": "Incorrect. Sudoku is a different application of graph coloring principles.",
+        "c": "Incorrect. Exam scheduling uses graph coloring but for academic scheduling, not frequency assignment.",
+        "d": "Correct! Mobile radio frequency assignment uses graph coloring where towers are vertices and edges connect towers in range of each other, ensuring adjacent towers get different frequencies."
       },
-      "correctAnswer": "a",
-      "difficulty": "advanced"
+      "correctAnswer": "d",
+      "difficulty": "beginner"
     },
     {
       "question": "What is the chromatic number of a cycle graph with n vertices where n is odd?",
@@ -102,57 +102,6 @@
       },
       "correctAnswer": "c",
       "difficulty": "beginner"
-    },
-    {
-      "question": "What is Vizing's theorem about edge coloring?",
-      "answers": {
-        "a": "The edge chromatic number equals the maximum degree",
-        "b": "The edge chromatic number is either the maximum degree or maximum degree + 1",
-        "c": "The edge chromatic number is always less than the vertex chromatic number",
-        "d": "The edge chromatic number equals the number of edges"
-      },
-      "explanations": {
-        "a": "Incorrect. While this is sometimes true, Vizing's theorem states it could be one more than the maximum degree.",
-        "b": "Correct! Vizing's theorem states that the edge chromatic number χ'(G) of a simple undirected graph G is either Δ(G) or Δ(G) + 1, where Δ(G) is the maximum degree of G.",
-        "c": "Incorrect. There is no such relationship between edge and vertex chromatic numbers.",
-        "d": "Incorrect. The edge chromatic number is related to the maximum degree, not the total number of edges."
-      },
-      "correctAnswer": "b",
-      "difficulty": "intermediate"
-    },
-    {
-      "question": "What is the Hadwiger conjecture in graph coloring?",
-      "answers": {
-        "a": "Every graph is 4-colorable",
-        "b": "Every graph with chromatic number k contains K_k as a minor",
-        "c": "Every planar graph is 3-colorable",
-        "d": "Every perfect graph is k-colorable where k is the size of largest clique"
-      },
-      "explanations": {
-        "a": "Incorrect. This is the Four Color Theorem for planar graphs, not the Hadwiger conjecture.",
-        "b": "Correct! The Hadwiger conjecture states that if a graph has chromatic number k, it must contain the complete graph K_k as a minor, relating graph coloring to structural properties.",
-        "c": "Incorrect. This is a different conjecture about planar graphs, not the Hadwiger conjecture.",
-        "d": "Incorrect. This is the Perfect Graph Theorem, not the Hadwiger conjecture."
-      },
-      "correctAnswer": "b",
-      "difficulty": "advanced"
-    },
-    {
-      "question": "What is the relationship between perfect graphs and graph coloring?",
-      "answers": {
-        "a": "Perfect graphs are always 3-colorable",
-        "b": "Perfect graphs have equal clique number and chromatic number for all induced subgraphs",
-        "c": "Perfect graphs are always bipartite",
-        "d": "Perfect graphs require exactly n colors for n vertices"
-      },
-      "explanations": {
-        "a": "Incorrect. Perfect graphs can require more than 3 colors depending on their structure.",
-        "b": "Correct! In a perfect graph, for every induced subgraph H, the chromatic number equals the size of the largest clique, making them particularly well-behaved for coloring problems.",
-        "c": "Incorrect. Perfect graphs are not necessarily bipartite; they can require more than 2 colors.",
-        "d": "Incorrect. The number of colors needed depends on the graph's structure, not just the number of vertices."
-      },
-      "correctAnswer": "b",
-      "difficulty": "advanced"
     }
   ]
 }
