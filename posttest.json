@@ -1,0 +1,107 @@
+{
+  "version": 2.0,
+  "questions": [
+    {
+      "question": "How many unique colors will be required for proper vertex coloring of a complete graph having n vertices?",
+      "answers": {
+        "a": "0",
+        "b": "1",
+        "c": "n",
+        "d": "n!"
+      },
+      "explanations": {
+        "a": "Incorrect. A graph cannot be colored with 0 colors as each vertex must be assigned at least one color.",
+        "b": "Incorrect. A complete graph cannot be colored with just 1 color as all vertices are connected to each other and must have different colors.",
+        "c": "Correct! In a complete graph, every vertex is connected to every other vertex, so each vertex must have a unique color, requiring exactly n colors.",
+        "d": "Incorrect. While n! represents the number of possible different arrangements of n colors, the minimum number of colors needed is just n."
+      },
+      "correctAnswer": "c",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "In the context of the Four Color Theorem mentioned in map coloring, what is the maximum number of colors needed to color any planar map?",
+      "answers": {
+        "a": "2 colors",
+        "b": "3 colors",
+        "c": "4 colors",
+        "d": "5 colors"
+      },
+      "explanations": {
+        "a": "Incorrect. Two colors are insufficient for many planar maps, especially those with triangular regions.",
+        "b": "Incorrect. Three colors are not always sufficient for all planar maps.",
+        "c": "Correct! The Four Color Theorem states that any planar map can be colored with at most 4 colors such that no two adjacent regions have the same color.",
+        "d": "Incorrect. While 5 colors would work, the Four Color Theorem proves that 4 colors are always sufficient."
+      },
+      "correctAnswer": "c",
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "What is the chromatic number of a tree with n vertices (where n > 1)?",
+      "answers": {
+        "a": "1",
+        "b": "2",
+        "c": "3",
+        "d": "n"
+      },
+      "explanations": {
+        "a": "Incorrect. A tree with more than 1 vertex has edges, so it requires at least 2 colors.",
+        "b": "Correct! A tree is a connected acyclic graph and is bipartite, so it can always be colored with exactly 2 colors by alternating colors along any path.",
+        "c": "Incorrect. Two colors are always sufficient for any tree structure.",
+        "d": "Incorrect. While n colors would work, it's excessive - only 2 colors are needed for trees."
+      },
+      "correctAnswer": "b",
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "A bipartite graph can always be properly vertex-coloured with",
+      "answers": {
+        "a": "Any number of colours",
+        "b": "The number of colours equal to the degree of any vertex.",
+        "c": "Exactly 2 colours.",
+        "d": "The number of colours equal to the number of vertices in one partition."
+      },
+      "explanations": {
+        "a": "Incorrect. While you can use more colors, a bipartite graph has a specific minimum number of colors needed.",
+        "b": "Incorrect. The degree of vertices is not directly related to the chromatic number of a bipartite graph.",
+        "c": "Correct! A bipartite graph can always be colored with exactly 2 colors because its vertices can be divided into two independent sets with no edges within each set.",
+        "d": "Incorrect. The number of vertices in a partition is not related to the chromatic number of a bipartite graph."
+      },
+      "correctAnswer": "c",
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "Which graph coloring application is used when assigning frequencies to mobile towers to avoid interference?",
+      "answers": {
+        "a": "Map coloring",
+        "b": "Sudoku solving",
+        "c": "Exam scheduling",
+        "d": "Mobile radio frequency assignment"
+      },
+      "explanations": {
+        "a": "Incorrect. Map coloring is used for geographical regions, not frequency assignment.",
+        "b": "Incorrect. Sudoku is a different application of graph coloring principles.",
+        "c": "Incorrect. Exam scheduling uses graph coloring but for academic scheduling, not frequency assignment.",
+        "d": "Correct! Mobile radio frequency assignment uses graph coloring where towers are vertices and edges connect towers in range of each other, ensuring adjacent towers get different frequencies."
+      },
+      "correctAnswer": "d",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "What is the chromatic number of a cycle graph with n vertices where n is odd?",
+      "answers": {
+        "a": "1",
+        "b": "2",
+        "c": "3",
+        "d": "n"
+      },
+      "explanations": {
+        "a": "Incorrect. A cycle graph cannot be colored with just 1 color as adjacent vertices must have different colors.",
+        "b": "Incorrect. An odd cycle cannot be colored with 2 colors as it's not bipartite.",
+        "c": "Correct! Any odd cycle requires exactly 3 colors for proper vertex coloring, as it cannot be colored with 2 colors but can always be colored with 3.",
+        "d": "Incorrect. While n colors would work, it's excessive - 3 colors are sufficient for any cycle graph regardless of size."
+      },
+      "correctAnswer": "c",
+      "difficulty": "beginner"
+    }
+  ]
+}

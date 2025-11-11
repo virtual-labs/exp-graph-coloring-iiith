@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Graph Coloring - Discrete Mathematics</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="mobile-detection.js"></script>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+  <div class="max-w-5xl mx-auto px-6 pb-16 space-y-12">
+
+    <section id="challenge-section" class="bg-white p-6 rounded-xl shadow-lg mb-6">
+      <div class="flex flex-col lg:flex-row gap-4 items-start lg:items-center justify-between">
+        <div class="flex-1">
+          <h3 class="font-semibold text-blue-800 mb-3">Graph Coloring Challenge</h3>
+          <div class="flex flex-col sm:flex-row gap-3 items-start sm:items-center">
+            <div class="flex items-center gap-2">
+              <label class="text-sm font-medium text-gray-700">Colors to use:</label>
+              <span id="colorCount" class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-sm font-medium">3</span>
+            </div>
+            <button onclick="checkColoring()" class="btn bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded text-sm" id="checkBtn">
+              Check Coloring
+            </button>
+            <button onclick="solveAutomatically()" class="btn bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded text-sm" id="solveBtn">
+              Show Solution
+            </button>
+          </div>
+          <p id="challengeQuestion" class="text-gray-600 mt-2 text-sm">
+            Color all vertices so that no two adjacent vertices have the same color!
+          </p>
+        </div>
+        <div class="btn-group">
+          <button onclick="generateNewGraph()" class="btn bg-gray-600 hover:bg-gray-700 text-white px-4 py-2 rounded text-sm">
+            New Graph
+          </button>
+          <button onclick="clearColoring()" class="btn bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded text-sm">
+            Clear Colors
+          </button>
+        </div>
+      </div>
+      <div id="feedback" class="mt-3 p-2 rounded hidden"></div>
+      
+      <!-- Color Palette -->
+      <div class="mt-4">
+        <h4 class="text-sm font-medium text-gray-700 mb-2">Available Colors:</h4>
+        <div id="colorPalette" class="flex gap-2 flex-wrap">
+          <!-- Colors will be generated dynamically -->
+        </div>
+        <div class="mt-2 text-xs text-gray-500">
+          Click a color, then click a vertex to color it.
+        </div>
+      </div>
+    </section>
+
+    <section id="game-section" class="bg-white p-6 rounded-xl shadow-lg">
+      <div class="game-container">
+        <canvas id="graphCanvas"></canvas>
+      </div>
+    </section>
+
+    <!-- Floating Controls Button -->
+    <div class="floating-button primary" id="controlsButton">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 6h9.75M10.5 6a1.5 1.5 0 1 1-3 0m3 0a1.5 1.5 0 1 0-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-9.75 0h9.75" />
+      </svg>
+    </div>
+    
+    <!-- Floating Controls Panel -->
+    <div class="floating-panel" id="controlsPanel">
+      <div class="floating-panel-header">
+        <h3 class="panel-title">Graph Parameters</h3>
+        <div class="floating-panel-close" id="controlsPanelClose">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+          </svg>
+        </div>
+      </div>
+      <div class="floating-panel-content space-y-4">
+        <div class="bg-indigo-50 p-3 rounded-lg">
+          <h3 class="font-semibold text-sm text-indigo-800 mb-3">Parameters</h3>
+          <div class="space-y-3">
+            <div>
+              <label class="block text-xs font-medium text-gray-700 mb-1">
+                Vertices: <span id="vertexCountValue">6</span>
+              </label>
+              <input type="range" id="vertexCountSlider" min="4" max="10" value="6" step="1" 
+                     class="w-full accent-indigo-600" onchange="updateVertexCount()">
+            </div>
+            <div>
+              <label class="block text-xs font-medium text-gray-700 mb-1">
+                Number of Colors: <span id="colorCountValue">3</span>
+              </label>
+              <input type="range" id="colorCountSlider" min="2" max="6" value="3" step="1" 
+                     class="w-full accent-indigo-600" onchange="updateColorCount()">
+            </div>
+          </div>
+        </div>
+        <div id="graphInfo" class="bg-green-50 p-3 rounded-lg">
+          <h3 class="font-semibold text-sm text-green-800 mb-2">Graph Info</h3>
+          <div class="text-xs space-y-1 text-gray-600">
+            <p>Vertices: <span id="vertexCount">6</span></p>
+            <p>Edges: <span id="edgeCount">0</span></p>
+            <p>Chromatic Number: <span id="chromaticNumber">-</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Floating Info Button -->
+    <div class="floating-button secondary" id="infoButton">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+        <path stroke-linecap="round" stroke-linejoin="round" d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z" />
+      </svg>
+    </div>
+    
+    <!-- Floating Info Panel -->
+    <div class="floating-panel" id="infoPanel">
+      <div class="floating-panel-header">
+      <h3 class="panel-title">How to Use This Experiment</h3>
+      <div class="floating-panel-close" id="infoPanelClose">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+        </svg>
+      </div>
+      </div>
+      <div class="floating-panel-content space-y-4">
+      <div class="bg-blue-50 p-3 rounded-lg">
+        <h3 class="font-semibold text-sm text-blue-800 mb-2">Instructions</h3>
+        <div class="text-xs space-y-1 text-gray-600">
+        <p>• Select a color from the palette below the challenge.</p>
+        <p>• Click a vertex on the graph to color it with the selected color.</p>
+        <p>• Use "Check Coloring" to verify your solution.</p>
+        <p>• Click "Show Solution" to see an automatic coloring.</p>
+        <p>• "New Graph" generates a different random graph.</p>
+        <p>• "Clear Colors" removes all your coloring.</p>
+        </div>
+      </div>
+      <div class="bg-green-50 p-3 rounded-lg">
+        <h3 class="font-semibold text-sm text-green-800 mb-2">Adjust Parameters</h3>
+        <div class="text-xs space-y-1 text-gray-600">
+        <p>• Click the floating controls button (bottom right) to open the parameters panel.</p>
+        <p>• Change the number of vertices or colors using the sliders.</p>
+        <p>• The graph and challenge will update automatically.</p>
+        </div>
+      </div>
+      <div class="bg-purple-50 p-3 rounded-lg">
+        <h3 class="font-semibold text-sm text-purple-800 mb-2">Tips</h3>
+        <div class="text-xs space-y-1 text-gray-600">
+        <p>• No two connected vertices can have the same color.</p>
+        <p>• Try to use as few colors as possible.</p>
+        <p>• Use the info and controls panels for help and customization.</p>
+        </div>
+      </div>
+      </div>
+    </div>
+
+    <!-- Theory Section -->
+    <section class="grid md:grid-cols-2 gap-8">
+      <div class="card bg-white p-6 rounded-xl shadow">
+        <h2 class="text-2xl font-semibold text-blue-700 mb-3">Vertex Coloring</h2>
+        <div class="space-y-3 text-sm">
+          <p class="text-gray-700">Vertex coloring assigns colors to vertices such that no two adjacent vertices share the same color.</p>
+          <div class="bg-blue-100 p-3 rounded">
+            <p class="font-medium text-blue-800 mb-2">Chromatic Number χ(G):</p>
+            <p class="text-gray-700">The minimum number of colors needed to properly color a graph.</p>
+          </div>
+          <div class="bg-gray-100 p-3 rounded">
+            <p class="font-medium text-gray-800">Examples:</p>
+            <ul class="list-disc pl-4 space-y-1 text-gray-700">
+              <li>Bipartite graphs: χ(G) = 2</li>
+              <li>Complete graph K_n: χ(G) = n</li>
+              <li>Trees: χ(G) = 2</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <div class="card bg-white p-6 rounded-xl shadow">
+        <h2 class="text-2xl font-semibold text-green-700 mb-3">Algorithms & Applications</h2>
+        <div class="space-y-3 text-sm">
+          <p class="text-gray-700">Graph coloring has numerous real-world applications and algorithmic approaches.</p>
+          <div class="bg-green-100 p-3 rounded">
+            <p class="font-medium text-green-800 mb-2">Greedy Algorithm:</p>
+            <p class="text-gray-700">Color vertices in order, using the smallest available color for each vertex.</p>
+          </div>
+          <div class="bg-gray-100 p-3 rounded">
+            <p class="font-medium text-gray-800">Applications:</p>
+            <ul class="list-disc pl-4 space-y-1 text-gray-700">
+              <li>Course scheduling</li>
+              <li>Register allocation</li>
+              <li>Map coloring</li>
+              <li>Frequency assignment</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script src="Graph Color.js"></script>
+<script src="../assets/js/iframeResize.js"></script>
+        
+        </body>
+</html>

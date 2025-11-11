@@ -1,0 +1,124 @@
+{
+  "version": 2.0,
+  "questions": [
+    {
+      "question": "Which of the following is not a type of graph in computer science?",
+      "answers": {
+        "a": "undirected graph",
+        "b": "bar graph",
+        "c": "directed graph",
+        "d": "weighted graph"
+      },
+      "explanations": {
+        "a": "Incorrect. An undirected graph is a valid type of graph in computer science where edges have no direction, meaning connections between vertices are bidirectional.",
+        "b": "Correct! A bar graph is a type of statistical chart used for data visualization, not a graph data structure in computer science.",
+        "c": "Incorrect. A directed graph (digraph) is a fundamental graph type in computer science where edges have direction, indicating one-way relationships between vertices.",
+        "d": "Incorrect. A weighted graph is a valid graph type in computer science where edges have numerical values (weights) representing costs, distances, or other metrics."
+      },
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "What is vertex coloring of a graph?",
+      "answers": {
+        "a": "A condition where any two vertices having a common edge should not have same color",
+        "b": " A condition where any two vertices having a common edge should always have same color",
+        "c": "A condition where all vertices should have a different color",
+        "d": "A condition where all vertices should have same color"
+      },
+      "explanations": {
+        "a": "Correct! Vertex coloring requires that adjacent vertices (those connected by an edge) must have different colors. This ensures no two connected vertices share the same color.",
+        "b": "Incorrect. This is the opposite of vertex coloring rules. Connected vertices must have different colors, not the same color.",
+        "c": "Incorrect. While vertices connected by edges must have different colors, vertices that aren't connected can share the same color. Not all vertices need different colors.",
+        "d": "Incorrect. Having all vertices the same color would violate the basic rule of vertex coloring, as adjacent vertices would have the same color."
+      },
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "In a properly vertex-coloured graph, what can you say about the colours of connected vertices (vertices with an edge between them)?",
+      "answers": {
+        "a": " They must all have the same colour",
+        "b": "They must all have different colours",
+        "c": "They can have any colour",
+        "d": "None of the above"
+      },
+      "explanations": {
+        "a": "Incorrect. Connected vertices cannot have the same color in a proper vertex coloring - this would violate the basic rule of graph coloring.",
+        "b": "Correct! In a properly vertex-colored graph, any two vertices that share an edge (connected vertices) must have different colors to maintain a valid coloring.",
+        "c": "Incorrect. Connected vertices cannot have any arbitrary color - they must have different colors to maintain a proper vertex coloring.",
+        "d": "Incorrect. The statement that connected vertices must have different colors is true, making option b the correct answer."
+      },
+      "correctAnswer": "b",
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "A graph G has a chromatic number of 2. What can you conclude about G?",
+      "answers": {
+        "a": "G is a complete graph.",
+        "b": " G is a bipartite graph.",
+        "c": "G can only be coloured with exactly 2 colours.",
+        "d": "G must have an even number of vertices."
+      },
+      "explanations": {
+        "a": "Incorrect. A complete graph with n vertices requires n colors, so it cannot have a chromatic number of 2 unless it has only 2 vertices.",
+        "b": "Correct! A graph with chromatic number 2 is bipartite, meaning its vertices can be divided into two independent sets where no vertices within the same set are connected.",
+        "c": "Incorrect. While the graph can be colored with 2 colors, it can also be colored with more colors. The chromatic number represents the minimum number of colors needed.",
+        "d": "Incorrect. A bipartite graph (chromatic number 2) can have either an even or odd number of vertices."
+      },
+      "correctAnswer": "b",
+      "difficulty": "advanced"
+    },
+    {
+      "question": "A friend claims they coloured a graph with 10 vertices and only needed 1 colour.  Is this possible?",
+      "answers": {
+        "a": "No, this is not possible for any graph with more than 1 vertex",
+        "b": "Yes, it's always possible to colour any graph with just 1 colour",
+        "c": "It depends on the specific connections in the graph",
+        "d": "Maybe, but it's very unlikely."
+      },
+      "explanations": {
+        "a": "Incorrect. A graph with no edges (null graph) can be colored with just one color, regardless of the number of vertices.",
+        "b": "Incorrect. Most graphs require multiple colors due to connections between vertices.",
+        "c": "Correct! If the graph has no edges (null graph), it can be colored with one color. If it has any edges, it needs at least two colors.",
+        "d": "Incorrect. It's not about probability - it depends entirely on whether the graph has any edges."
+      },
+      "correctAnswer": "c",
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "What is the minimum number of colors needed to properly color a cycle graph with 5 vertices (C5)?",
+      "answers": {
+        "a": "2 colors",
+        "b": "3 colors",
+        "c": "4 colors",
+        "d": "5 colors"
+      },
+      "explanations": {
+        "a": "Incorrect. A cycle graph with 5 vertices cannot be colored with just 2 colors as it's not bipartite.",
+        "b": "Correct! A cycle graph with 5 vertices (C5) requires exactly 3 colors for proper vertex coloring. This is because it forms an odd cycle.",
+        "c": "Incorrect. While 4 colors would work, it's not the minimum number needed. C5 can be properly colored with just 3 colors.",
+        "d": "Incorrect. Using 5 colors would work but is excessive. The minimum number needed is 3 colors."
+      },
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "What is the chromatic number of a complete graph with n vertices (Kn)?",
+      "answers": {
+        "a": "1",
+        "b": "2",
+        "c": "n/2",
+        "d": "n"
+      },
+      "explanations": {
+        "a": "Incorrect. A complete graph needs different colors for each vertex as every vertex is connected to every other vertex.",
+        "b": "Incorrect. Two colors are only sufficient for a complete graph with 2 vertices (K2).",
+        "c": "Incorrect. Half the number of vertices is not sufficient as every vertex in a complete graph is connected to every other vertex.",
+        "d": "Correct! In a complete graph, every vertex is connected to every other vertex, so each vertex must have a different color, requiring n colors."
+      },
+      "correctAnswer": "d",
+      "difficulty": "intermediate"
+    }
+  ]
+}
